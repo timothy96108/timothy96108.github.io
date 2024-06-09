@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>版型管理</title>
+    <url>/20240603/web-layout/</url>
+    <content><![CDATA[<p>章節重點：</p>
+<ul>
+<li>HTML 元素的容器特性</li>
+<li>盒模型</li>
+<li>排版實務觀念</li>
+</ul>
+<h2 id="前置環境"><a href="#前置環境" class="headerlink" title="前置環境"></a>前置環境</h2><ul>
+<li><p>建立並載入 HTML、CSS 檔案</p>
+</li>
+<li><p><a href="https://meyerweb.com/eric/tools/css/reset/">Reset CSS</a>：override user agent stylesheet</p>
+</li>
+<li><p>熟練 <a href="https://docs.emmet.io/cheat-sheet/">Emmet</a></p>
+</li>
+<li><p>參考<a href="https://hackmd.io/iE6mxohOS-ujKU398Ewk1w">練功菜單</a>多加練習</p>
+</li>
+<li><p>HTML structure</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>This is a heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a paragraph<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="HTML-常用標籤"><a href="#HTML-常用標籤" class="headerlink" title="HTML 常用標籤"></a>HTML 常用標籤</h3><ul>
+<li><p>heading</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Heading level 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Heading level 2<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Heading level 3<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Heading level 4<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Heading level 5<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Heading level 6<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>paragraph</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>image &amp; relative URL</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./images/google-logo.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Google logo&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>image &amp; absolute URL</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.usbrandcolors.com/images/logos/google-logo.svg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Google logo&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>hyperlink</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.google.com&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span>&gt;</span>前往 Google 首頁<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>list &amp; list item</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>beef<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>pork<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>chicken<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="CSS-選取器"><a href="#CSS-選取器" class="headerlink" title="CSS 選取器"></a>CSS 選取器</h3><ul>
+<li>HTML tag selector<ul>
+<li><code>h1</code>、<code>p</code>、<code>img</code>、<code>a</code>、<code>ul</code></li>
+</ul>
+</li>
+<li>class selector<ul>
+<li><code>.container</code>、<code>.header</code>、<code>.menu</code>、<code>.main</code>、<code>.footer</code></li>
+</ul>
+</li>
+<li>pseudo-class selector<ul>
+<li><code>a:link</code></li>
+<li><code>a:visited</code></li>
+<li><code>a:hover</code></li>
+<li><code>a:focus</code></li>
+<li><code>a:active</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="HTML-元素的容器特性"><a href="#HTML-元素的容器特性" class="headerlink" title="HTML 元素的容器特性"></a>HTML 元素的容器特性</h2><ul>
+<li>網頁元素的排版，都和<strong>容器的設計</strong>有關</li>
+<li>網頁元素的佈局，可以區分為外容器（container）與內元件（item）兩種性質<ul>
+<li>範例網站：<a href="https://tw.yahoo.com/">Yahoo 首頁</a>、<a href="https://tw.news.yahoo.com/">Yahoo 新聞</a></li>
+</ul>
+</li>
+<li>網頁元素都有預設的 <code>display</code> 屬性，常見的屬性值為<strong>區塊元素</strong>（block-level element）與<strong>行內元素</strong>（inline element）兩種</li>
+</ul>
+<h3 id="區塊元素"><a href="#區塊元素" class="headerlink" title="區塊元素"></a>區塊元素</h3><ul>
+<li>盡可能佔滿父層容器的寬度</li>
+<li>可以調整元素的寬度與高度</li>
+<li>元素總是從新的一行開始佈局</li>
+<li>例子：<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;ul&gt;</code>、<code>&lt;li&gt;</code>、<code>&lt;div&gt;</code></li>
+</ul>
+<h3 id="行內元素"><a href="#行內元素" class="headerlink" title="行內元素"></a>行內元素</h3><ul>
+<li>只佔據元素內容需要的寬度</li>
+<li>不能調整元素的寬度與高度</li>
+<li>元素不會從新的一行開始佈局</li>
+<li>例子：<code>&lt;a&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>、<code>&lt;span&gt;</code></li>
+</ul>
+<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p>每個 HTML 元素，都可以視為一個盒子，設定 <code>width</code> 和 <code>height</code> 來調整盒子的寬度與高度，用盒模型來表示「元素在瀏覽器頁面上，所佔據的空間範圍」。</p>
+<p>一個元素所佔據的空間範圍，是由四個層層包裹的矩形所構成，由內而外分別是「content-box（藍色）、padding-box（綠色）、border-box（黃色）、margin-box（橙色）」</p>
+<p><img src="https://imgur.com/4WvZ19Z.png" alt="box model"></p>
+<h3 id="外邊距（margin）"><a href="#外邊距（margin）" class="headerlink" title="外邊距（margin）"></a>外邊距（margin）</h3><p>margin 是用來設定元素與其他元素之間的距離。</p>
+<p>從盒模型的角度來看，邊框（border）以外的空間皆屬於 margin 的空間範圍。</p>
+<h3 id="內邊距（padding）"><a href="#內邊距（padding）" class="headerlink" title="內邊距（padding）"></a>內邊距（padding）</h3><p>padding 是用來設定元素內容（content）與 border 之間的留白空間，避免元素內容緊貼於 border。</p>
+<p>從盒模型的角度來看，元素內容至 border 以內的空間皆屬於 padding 的空間範圍。</p>
+<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h3><p>box-sizing 是用來<strong>設定盒模型的計算方式</strong>，<br>也就是設定 <code>width</code> 和 <code>height</code> 作用的空間範圍。</p>
+<p>box-sizing 有兩種屬性值，一種是預設值 **<code>content-box</code>**，<code>width</code> 和 <code>height</code> 作用在元素內容上。</p>
+<p><img src="https://imgur.com/O7fNAmB.png" alt="content-box"></p>
+<p>另一種是 **<code>border-box</code>**，<code>width</code> 和 <code>height</code> 作用在邊框上。</p>
+<p><img src="https://imgur.com/HUivkLG.png" alt="border-box"></p>
+<p>現行網頁開發的過程中，都會加上以下程式碼片段：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">*, *<span class="hljs-selector-pseudo">:before</span>, *<span class="hljs-selector-pseudo">:after</span> &#123;<br>  <span class="hljs-attribute">box-sizing</span>: border-box;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>這樣做的目的，是將盒模型設定成 <code>border-box</code>，<code>width</code> 和 <code>height</code> 的作用範圍包含 <strong>content、padding 與 border</strong>，這樣就不需要再額外計算 padding 和 border 佔據的空間，降低網頁元素跑版的情況發生。</p>
+<ul>
+<li>參考文章：<a href="https://vocus.cc/article/649bbb8afd897800010e97b6">CSS 習作｜Box Sizing 盒模型計算方式</a></li>
+</ul>
+<h2 id="排版實務觀念"><a href="#排版實務觀念" class="headerlink" title="排版實務觀念"></a>排版實務觀念</h2><h3 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h3><p>在網頁排版中，文字本身是不具有高度的，文字的高度是由行距（line-height）所產生。</p>
+<p><img src="https://imgur.com/qHazEb5.png" alt="line-height"></p>
+<h3 id="圖片細節"><a href="#圖片細節" class="headerlink" title="圖片細節"></a>圖片細節</h3><p>包裹在 <code>&lt;div&gt;</code> 內的 <code>&lt;img&gt;</code> 元素，底部都有 <strong>3px 的間距</strong>。</p>
+<p>在網頁排版中，圖片的性質與文字字元相似，而圖片與文字字元的 <code>vertical-align</code> 預設為 baseline，其底部的空間是預留給諸如：g、p、y 等字元使用。</p>
+<p><img src="https://imgur.com/gnbchEm.png" alt="baseline"></p>
+<p>設定 <code>&lt;img&gt;</code> 的 <code>vertical-align</code> 屬性，表明圖片不需要這樣的預留空間，即可解決圖片底部有 3px 間距的問題。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">img</span> &#123;<br>  <span class="hljs-attribute">vertical-align</span>: middle;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="容器相關"><a href="#容器相關" class="headerlink" title="容器相關"></a>容器相關</h3><ul>
+<li><p>不輕易寫死容器的高度</p>
+<p>容器的高度，應由內元件的內容<strong>自適應推擠產生</strong>；若是將容器高度寫死，容易導致內元件跑版。</p>
+</li>
+<li><p>margin 與 padding</p>
+<ul>
+<li><p>margin 與 padding 的推擠方向盡量一致，避免邊距重疊（margin collapsing）的問題發生。</p>
+</li>
+<li><p>從父層元素設定 padding，統一外容器與內元件的內邊距。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="類別名稱相關"><a href="#類別名稱相關" class="headerlink" title="類別名稱相關"></a>類別名稱相關</h3><ul>
+<li><p>網頁排版的每個區塊，都要自訂 class 名稱。</p>
+</li>
+<li><p>class 名稱的順序：<strong>共用性質</strong>的 class 名稱，應放在自訂的 class 名稱之後。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;profile container&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="滿版式網頁設計"><a href="#滿版式網頁設計" class="headerlink" title="滿版式網頁設計"></a>滿版式網頁設計</h3><p>範例網站：</p>
+<ul>
+<li><a href="https://shopee.tw/">蝦皮</a></li>
+<li><a href="https://ithelp.ithome.com.tw/">IT 鐵人邦</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>web-layout</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>變數</title>
+    <url>/20240605/variable/</url>
+    <content><![CDATA[<p>程式（program）是一組特殊的指令，用來告訴電腦要執行什麼任務。當在程式執行的過程中，需要重複使用到特定資料時，最簡單的方式就是將資料存放到容器中記錄起來。</p>
+<p>若資料在程式執行的過程中是會變動的，會將該容器稱為<strong>變數</strong>（variable），也就是說「變數是用來記錄資料在程式執行的過程中之狀態（state）」。</p>
+<p>要確保資料在程式執行的過程中都不會變動時，會將該容器稱為<strong>常數</strong>（constant）。當常數被宣告並賦予初始值後，程式執行的過程中將無法再對常數重新賦值。</p>
+<h2 id="宣告變數"><a href="#宣告變數" class="headerlink" title="宣告變數"></a>宣告變數</h2><p>JavaScript 是動態型別的程式語言，在宣告變數時，<strong>不需要</strong>明確指定變數的資料型別。JavaScript 也是弱型別的程式語言，當兩個不同型別的資料進行運算時，允許<strong>型別轉換</strong>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> milkPrice = <span class="hljs-number">40</span>;<br></code></pre></td></tr></table></figure>
+
+<p>宣告一個變數，變數名稱為 <code>milkPrice</code>，並賦予 <code>milkPrice</code> 值為 40。</p>
+<h2 id="宣告變數的方式"><a href="#宣告變數的方式" class="headerlink" title="宣告變數的方式"></a>宣告變數的方式</h2><p>JavaScript 有三種宣告變數的方式：<code>let</code>、<code>const</code>、<code>var</code>。</p>
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>使用 <code>let</code> 宣告變數，若有設定初始值，可以對該變數重新賦值。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> milkPrice = <span class="hljs-number">40</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`milk price: <span class="hljs-subst">$&#123;milkPrice&#125;</span>`</span>);  <span class="hljs-comment">// milk price: 40</span><br></code></pre></td></tr></table></figure>
+
+<p>宣告一個變數，變數名稱為 <code>milkPrice</code>，並賦予 <code>milkPrice</code> 值為 40。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">DISCOUNT</span> = <span class="hljs-number">0.8</span>;<br>milkPrice = milkPrice * <span class="hljs-variable constant_">DISCOUNT</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`milk price: <span class="hljs-subst">$&#123;milkPrice&#125;</span>`</span>);  <span class="hljs-comment">// milk price: 32</span><br></code></pre></td></tr></table></figure>
+
+<p>存取變數 <code>milkPrice</code>，並重新賦予 <code>milkPrice</code> 值為 32。</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>使用 <code>const</code> 宣告變數，若變數為基本型別（primitive type），<strong>不可</strong>再對該變數重新賦值。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">DISCOUNT</span> = <span class="hljs-number">0.8</span>;<br><span class="hljs-variable constant_">DISCOUNT</span> = <span class="hljs-number">0.75</span>;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight txt"><table><tr><td class="code"><pre><code class="hljs txt">Uncaught TypeError: Assignment to constant variable.<br></code></pre></td></tr></table></figure>
+
+<p>若變數為物件型別（object type），則可以對<strong>該變數內的資料</strong>重新賦值。</p>
+<h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><p>使用 <code>var</code> 宣告變數，會汙染<strong>全域變數</strong>，容易產生不可預期的錯誤。</p>
+<p>主要是因為將變數宣告成全域變數會發生以下情況：</p>
+<ol>
+<li><p>變數名稱衝突，發生預期外的程式錯誤</p>
+</li>
+<li><p>佔用記憶體，無法回收</p>
+</li>
+</ol>
+<p>現在大多使用 <code>let</code>、<code>const</code> 宣告變數，避免汙染全域變數的問題發生。</p>
+<h3 id="宣告變數的限制"><a href="#宣告變數的限制" class="headerlink" title="宣告變數的限制"></a>宣告變數的限制</h3><p>在宣告變數時，變數的命名有以下限制：</p>
+<ol>
+<li><p>變數名稱有區分大小寫，例如：<code>mikePrice</code>、<code>milkprice</code> 是兩個不同的變數</p>
+</li>
+<li><p>第一個字元不可為<strong>數字</strong>，例如：<code>1price</code></p>
+</li>
+<li><p>第一個字元可為特殊符號，例如：<code>$price</code>、<code>_price</code></p>
+</li>
+<li><p>可以使用中文命名變數</p>
+</li>
+<li><p><strong>不可使用<a href="https://www.w3schools.com/js/js_reserved.asp">保留字（JavaScript Reserved Words）</a></strong></p>
+</li>
+</ol>
+<h2 id="變數與記憶體"><a href="#變數與記憶體" class="headerlink" title="變數與記憶體"></a>變數與記憶體</h2><p>使用瀏覽器（browser）執行 JavaScript 時，變數資料會被儲存在瀏覽器的記憶體空間中，每個分頁都有<strong>獨立的記憶體空間</strong>，變數資料不會在不同分頁中共享。</p>
+<p>當瀏覽器<strong>重新載入</strong>（reload）時，該分頁的記憶體空間會被清空，變數資料不復存在。</p>
+<h2 id="資料型別（Data-Types）"><a href="#資料型別（Data-Types）" class="headerlink" title="資料型別（Data Types）"></a>資料型別（Data Types）</h2><h3 id="基本型別（primitive-type）"><a href="#基本型別（primitive-type）" class="headerlink" title="基本型別（primitive type）"></a>基本型別（primitive type）</h3><ul>
+<li>數值（number）</li>
+<li>字串（string）</li>
+<li>布林（boolean）</li>
+<li>空值（null）</li>
+<li>未定義（undefined）</li>
+</ul>
+<h3 id="物件型別（object-type）"><a href="#物件型別（object-type）" class="headerlink" title="物件型別（object type）"></a>物件型別（object type）</h3><ul>
+<li>陣列（array）</li>
+<li>物件（object）</li>
+<li>函式（function）</li>
+</ul>
+<h2 id="判斷資料型別"><a href="#判斷資料型別" class="headerlink" title="判斷資料型別"></a>判斷資料型別</h2><p>使用 <code>typeof</code> 可以檢查變數的資料型別，回傳值的資料型別為<strong>字串</strong>（string）。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">typeof</span> <span class="hljs-number">614</span>   <span class="hljs-comment">// &#x27;number&#x27;</span><br><span class="hljs-keyword">typeof</span> <span class="hljs-number">3.14</span>  <span class="hljs-comment">// &#x27;number&#x27;</span><br><span class="hljs-keyword">typeof</span> -<span class="hljs-number">31</span>   <span class="hljs-comment">// &#x27;number&#x27;</span><br><span class="hljs-keyword">typeof</span> <span class="hljs-title class_">NaN</span>   <span class="hljs-comment">// &#x27;number&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>不過，<code>typeof</code> 無法<strong>精準</strong>的判斷資料型別，以下是一些容易混淆的地方：</p>
+<ul>
+<li><p><code>typeof null</code> 會回傳「object」。照理說 <code>null</code> 應該屬於基本型別之一，不應該是物件型別，但根據 w3c 的說明，可以將這件事視為一個 bug：</p>
+<blockquote>
+<p>You can consider it a bug in JavaScript that <code>typeof null</code> is an object. It should be null.</p>
+</blockquote>
+</li>
+<li><p><code>typeof [1, 3, 5]</code> 會回傳「object」。typeof 無法將物件型別中的陣列細分出來。</p>
+</li>
+<li><p><code>typeof function() &#123;&#125;</code> 會回傳「function」。雖然函式也是一種特殊的物件型別。</p>
+</li>
+<li><p><code>typeof NaN</code> 會回傳「number」。要檢查資料是否為 NaN 時，可以使用 <code>isNaN()</code> 方法，如果是 NaN 會回傳 true。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+</search>
